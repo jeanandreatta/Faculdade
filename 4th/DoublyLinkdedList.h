@@ -63,26 +63,43 @@ void DoublyLinkedList__frontInsert(DoublyLinkeedList **List,DoublyLinkedList__In
 	(*List)->front=p;
 }
 //--------------------------------------
-DoublyLinkedList__Info DoublyLinkeedList__rearRemove(DoubeLinkedList **List)
+DoublyLinkedList__Info DoublyLinkeedList__rearRemove(DoublyLinkedList **List)
 {
-	DoublyLinkedList__Info info;
-	DoublyLinkedList__Node p=(*List)->rear;
-	(*List)->rear=p->left;
-	(*List)->rear->right=NULL;
-	info=p->info;
-	free(p);
-	return info;
+	f(!DoublyLinkedList__isEmpty(*List))
+	{
+		DoublyLinkedList__Info info;
+		DoublyLinkedList__Node p=(*List)->rear;
+		if(p->left==NULL)
+			DoublyLinkedList__init(&*List);
+		else
+		{
+			(*List)->rear=p->left;
+			(*List)->rear->right=NULL;
+		}
+		info=p->info;
+		free(p);
+		return info;
+	}
+	return NULL;
 }
 //----------------------------
 DoublyLinkedList__Info DoublyLinkeedList__frontRemove(DoublyLinkedList **List)
 {
-	DoublyLinkedList__Info info;
-	DoublyLinkedList__Node p=(*List)->front;
-	(*List)->front=p->right;
-	(*List)->front->left=NULL;
-	info=p->info;
-	free(p);
-	return info;
+	if(!DoublyLinkedList__isEmpty(*List)){
+		DoublyLinkedList__Info info;
+		DoublyLinkedList__Node p=(*List)->front;
+		if(p->right==NULL)//se direita da frente
+			DoublyLinkedList__init(&*List);
+		else
+		{
+			(*List)->front=p->right;
+			(*List)->front->left=NULL;
+		}
+		info=p->info;
+		free(p);
+		return info;
+	}
+	return NULL;
 }
 //---------------------------
 #endif
