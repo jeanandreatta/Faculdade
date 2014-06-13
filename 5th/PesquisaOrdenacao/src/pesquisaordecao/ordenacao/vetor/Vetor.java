@@ -23,6 +23,13 @@ import java.util.List;
             MergeSort.mergeSort(vet);
         return vet;
     }
+    public static Object[] bubbleSort(Object vector)
+    {
+        Object[] vet=SortingMethods.getVetor(vector);
+        if(vet==null)return null;
+            BubbleSort.bubbleSort(vet);
+        return vet;
+    }
     /**
      * Exibe um vetor
      * @param v 

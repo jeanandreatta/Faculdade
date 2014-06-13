@@ -13,6 +13,7 @@ import pesquisaordecao.ordenacao.vetor.Vetor;
  * @author Jean Andreatta
  */
 public class Main {
+    
 
     public static void main(String args[]){
         String [] vet=new String[4];

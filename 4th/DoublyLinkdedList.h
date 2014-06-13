@@ -1,5 +1,5 @@
-#ifndef DoublyLINKEDLIST_H
-#define DoublyLINKEDLIST_H 
+#ifndef DOUBLYLINKEDLIST_H
+#define DOUBLYLINKEDLIST_H 
 //------------------------
 #ifndef DoublyLinkedList__Info
 typedef int DoublyLinkedList__Info;
@@ -50,7 +50,7 @@ void DoublyLinkedList__rearInsert(DoublyLinkedList **List,DoublyLinkedList__Info
 	(*List)->rear=p;
 }
 //---------------------------------------
-void DoublyLinkedList__frontInsert(DoublyLinkeedList **List,DoublyLinkedList__Info info)
+void DoublyLinkedList__frontInsert(DoublyLinkedList **List,DoublyLinkedList__Info info)
 {
 	DoublyLinkedList__Node p=DoublyLinkedList__getNode();
 	p->info=info;
